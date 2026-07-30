@@ -1,0 +1,40 @@
+# Large forensic and lab artifacts
+*.vdi
+*.vmdk
+*.ova
+*.ovf
+*.iso
+*.raw
+*.dmp
+*.mem
+
+# Packet captures
+*.pcap
+*.pcapng
+
+# Executables and archives
+*.exe
+*.msi
+*.zip
+*.7z
+*.rar
+
+# Credentials and secrets
+.env
+*.key
+*.pem
+*.pfx
+*.p12
+secrets.*
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# Editor settings
+.vscode/
