@@ -2,6 +2,12 @@
 
 
 
+
+
+
+
+
+
 \## Overview
 
 
@@ -26,11 +32,19 @@ As my cybersecurity knowledge and technical skills continue to grow, this lab wi
 
 
 
+
+
+
+
+
+
+
+
 \## Lab Architecture
 
 
 
-The home lab is designed as a dedicated virtualization environment that provides a controlled platform for learning, testing, and validating cybersecurity concepts. The architecture separates physical infrastructure, virtual systems, storage, and recovery components to create a repeatable environment for security research and hands-on experimentation.
+The home lab is designed as a dedicated virtualization environment that provides a controlled platform for learning, testing, and validating cybersecurity concepts. The architecture separates physical infrastructure, virtual systems, storage, and recovery components to create a repeatable environment for security testing, research, and hands-on experimentation.
 
 
 
@@ -99,4 +113,80 @@ The primary objectives of this home lab are to:
 
 
 
+
+
+
+\## Host Hardware
+
+
+
+The home lab is hosted on \*\*CYBERHOST1\*\*, a dedicated \*\*GEEKOM IT15 Mini PC\*\* configured specifically for virtualization and cybersecurity testing.
+
+
+
+| Component | Specification |
+
+|---|---|
+
+| \*\*Host Name\*\* | CYBERHOST1 |
+
+| \*\*System Role\*\* | Dedicated Virtualization Host |
+
+| \*\*Operating System\*\* | Windows 11 Pro |
+
+| \*\*Processor\*\* | Intel Core Ultra 9 285H |
+
+| \*\*Memory\*\* | 32 GB RAM |
+
+| \*\*Storage\*\* | 2 TB SSD |
+
+| \*\*Virtualization Platform\*\* | Oracle VirtualBox |
+
+
+
+The system provides the processing capacity, memory, and storage required to operate multiple virtual machines while supporting vulnerability scanning, network analysis, penetration testing, and digital forensics workloads.
+
+
+
+Administrative access is performed remotely from a Lenovo laptop using Microsoft Remote Desktop (RDP). The Lenovo laptop functions only as a management workstation and is not considered part of the lab infrastructure.
+
+
+
+
+
+
+
+
+
+
+
+\## Software \& Platforms
+
+
+
+The home lab utilizes a combination of commercial and open-source software to support virtualization, system administration, vulnerability management, penetration testing, network analysis, digital forensics, and project documentation.
+
+
+
+| Software | Purpose |
+
+|---|---|
+
+| \*\*Windows 11 Pro\*\* | Host operating system for the virtualization environment. |
+
+| \*\*Oracle VirtualBox\*\* | Virtualization platform used to create and manage the lab infrastructure. |
+
+| \*\*Microsoft Remote Desktop (RDP)\*\* | Remote administration of the virtualization host from the management workstation. |
+
+| \*\*Kali Linux\*\* | Security testing platform containing penetration testing and network analysis tools. |
+
+| \*\*OpenVAS (Greenbone)\*\* | Vulnerability management and security assessment platform. |
+
+| \*\*Git\*\* | Version control for project documentation and portfolio development. |
+
+| \*\*GitHub\*\* | Repository hosting and version management for the cybersecurity portfolio. |
+
+
+
+Additional software, security tools, and operating systems will be incorporated into the environment as new projects expand the capabilities of the lab.
 
