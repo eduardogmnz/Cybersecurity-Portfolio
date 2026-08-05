@@ -2,12 +2,6 @@
 
 
 
-
-
-
-
-
-
 \## Overview
 
 
@@ -29,14 +23,6 @@ This home lab serves as the foundation for every project contained within this p
 
 
 As my cybersecurity knowledge and technical skills continue to grow, this lab will evolve to incorporate additional technologies, services, and defensive capabilities while maintaining a structured, well-documented, and repeatable environment for learning and experimentation.
-
-
-
-
-
-
-
-
 
 
 
@@ -76,12 +62,6 @@ Figure 1 illustrates the overall architecture of the cybersecurity home lab.
 
 
 
-
-
-
-
-
-
 \## Objectives
 
 
@@ -103,16 +83,6 @@ The primary objectives of this home lab are to:
 \- Produce clear, professional technical documentation for the projects contained within this portfolio.
 
 \- Expand the environment over time as new technologies, tools, and security concepts are introduced.
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -152,14 +122,6 @@ Administrative access is performed remotely from a Lenovo laptop using Microsoft
 
 
 
-
-
-
-
-
-
-
-
 \## Software \& Platforms
 
 
@@ -189,4 +151,84 @@ The home lab utilizes a combination of commercial and open-source software to su
 
 
 Additional software, security tools, and operating systems will be incorporated into the environment as new projects expand the capabilities of the lab.
+
+
+
+\## Virtual Machine Inventory
+
+
+
+The lab consists of multiple virtual machines that represent systems commonly found within enterprise environments. Each virtual machine serves a specific role while providing a safe and isolated environment for developing practical cybersecurity skills.
+
+
+
+| Virtual Machine | Operating System | Primary Role |
+
+|---|---|---|
+
+| \*\*Kali-Lab\*\* | Kali Linux | Security workstation used for penetration testing, enumeration, packet analysis, and security assessments. |
+
+| \*\*OpenVAS-Lab\*\* | Greenbone/OpenVAS | Vulnerability management platform used to perform authenticated and unauthenticated security scans. |
+
+| \*\*Win11-Lab\*\* | Windows 11 | Modern Windows endpoint used for administration, defensive testing, and endpoint security exercises. |
+
+| \*\*Win7-Lab\*\* | Windows 7 | Legacy Windows system maintained for compatibility and security testing scenarios. |
+
+| \*\*Metasploitable2-Lab\*\* | Linux | Intentionally vulnerable target used for exploitation, vulnerability validation, and penetration testing exercises. |
+
+| \*\*Win11-Base\*\* | Windows 11 | Golden Image maintained as the standardized deployment template for future Windows virtual machines. |
+
+
+
+Each virtual machine is configured to support specific learning objectives while maintaining isolation from production systems. This approach enables repeatable testing, experimentation, and recovery without impacting the underlying host operating system.
+
+
+
+\## Storage Strategy
+
+
+
+The cybersecurity lab uses a structured storage strategy to organize project documentation, virtual machines, supporting resources, and recovery data.
+
+
+
+The primary workspace is located at \*\*C:\\CyberLab\*\*, which serves as the central repository for projects, scripts, evidence, documentation, virtual machine resources, and supporting files.
+
+
+
+An external hard drive is used exclusively for offline backups of important lab resources. The drive is connected only when backup or restoration operations are performed, reducing the risk of accidental modification, corruption, or data loss.
+
+
+
+This storage strategy provides a centralized workspace for day-to-day lab operations while maintaining separate offline recovery media for long-term protection of the environment.
+
+
+
+\## Deployment Templates
+
+
+
+To promote consistency across the environment, the lab maintains a standardized Windows deployment template named \*\*Win11-Base\*\*.
+
+
+
+The Golden Image is used as the foundation for creating new Windows virtual machines, allowing systems to be deployed with a known-good configuration while reducing setup time and configuration inconsistencies.
+
+
+
+Using a standardized deployment template provides several operational benefits, including:
+
+
+
+\- Consistent system configurations across new deployments.
+
+\- Faster provisioning of additional virtual machines.
+
+\- Simplified recovery following testing or system failures.
+
+\- Reduced time required to build future lab environments.
+
+
+
+Maintaining a dedicated Golden Image helps ensure that future projects begin from a stable and repeatable baseline.
 
