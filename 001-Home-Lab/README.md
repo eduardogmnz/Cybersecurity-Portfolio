@@ -1,8 +1,8 @@
-\# Project 001 – Personal Cybersecurity Home Lab
+# Project 001 – Personal Cybersecurity Home Lab
 
 
 
-\## Overview
+ ## Overview
 
 
 
@@ -26,7 +26,7 @@ As my cybersecurity knowledge and technical skills continue to grow, this lab wi
 
 
 
-\## Lab Architecture
+ ## Lab Architecture
 
 
 
@@ -34,7 +34,7 @@ The home lab is designed as a dedicated virtualization environment that provides
 
 
 
-The environment is centered around \*\*CYBERHOST1\*\*, a dedicated Windows 11 Pro virtualization host running Oracle VirtualBox. Administrative management is performed remotely from a Lenovo laptop using Microsoft Remote Desktop (RDP), allowing the host to operate independently while simplifying day-to-day administration.
+The environment is centered around **CYBERHOST1**, a dedicated Windows 11 Pro virtualization host running Oracle VirtualBox. Administrative management is performed remotely from a Lenovo laptop using Microsoft Remote Desktop (RDP), allowing the host to operate independently while simplifying day-to-day administration.
 
 
 
@@ -51,18 +51,13 @@ Figure 1 illustrates the overall architecture of the cybersecurity home lab.
 
 
 <p align="center">
-
-&#x20; <img src="Assets/CyberLab-Architecture-Diagram-v1.png"
-
-&#x20;      alt="Cybersecurity Home Lab Architecture"
-
-&#x20;      width="1000">
-
+  <img src="Assets/CyberLab-Architecture-Diagram-v1.png"
+       alt="Cybersecurity Home Lab Architecture"
+       width="1000">
 </p>
 
 
-
-\## Objectives
+ ## Objectives
 
 
 
@@ -70,27 +65,27 @@ The primary objectives of this home lab are to:
 
 
 
-\- Develop practical cybersecurity and system administration skills through hands-on experience in a controlled environment.
+- Develop practical cybersecurity and system administration skills through hands-on experience in a controlled environment.
 
-\- Build proficiency with security, networking, vulnerability assessment, penetration testing, and digital forensics tools.
+- Build proficiency with security, networking, vulnerability assessment, penetration testing, and digital forensics tools.
 
-\- Simulate common enterprise systems and security scenarios using dedicated virtual machines.
+- Simulate common enterprise systems and security scenarios using dedicated virtual machines.
 
-\- Provide a repeatable platform for network analysis, vulnerability testing, exploitation validation, incident investigation, and forensic analysis.
+- Provide a repeatable platform for network analysis, vulnerability testing, exploitation validation, incident investigation, and forensic analysis.
 
-\- Maintain standardized deployment, recovery, and backup processes that support reliable lab operations.
+- Maintain standardized deployment, recovery, and backup processes that support reliable lab operations.
 
-\- Produce clear, professional technical documentation for the projects contained within this portfolio.
+- Produce clear, professional technical documentation for the projects contained within this portfolio.
 
-\- Expand the environment over time as new technologies, tools, and security concepts are introduced.
-
-
-
-\## Host Hardware
+- Expand the environment over time as new technologies, tools, and security concepts are introduced.
 
 
 
-The home lab is hosted on \*\*CYBERHOST1\*\*, a dedicated \*\*GEEKOM IT15 Mini PC\*\* configured specifically for virtualization and cybersecurity testing.
+ ## Host Hardware
+
+
+
+The home lab is hosted on **CYBERHOST1**, a dedicated **GEEKOM IT15 Mini PC** configured specifically for virtualization and cybersecurity testing.
 
 
 
@@ -98,19 +93,19 @@ The home lab is hosted on \*\*CYBERHOST1\*\*, a dedicated \*\*GEEKOM IT15 Mini P
 
 |---|---|
 
-| \*\*Host Name\*\* | CYBERHOST1 |
+| **Host Name** | CYBERHOST1 |
 
-| \*\*System Role\*\* | Dedicated Virtualization Host |
+| **System Role** | Dedicated Virtualization Host |
 
-| \*\*Operating System\*\* | Windows 11 Pro |
+| **Operating System** | Windows 11 Pro |
 
-| \*\*Processor\*\* | Intel Core Ultra 9 285H |
+| **Processor** | Intel Core Ultra 9 285H |
 
-| \*\*Memory\*\* | 32 GB RAM |
+| **Memory** | 32 GB RAM |
 
-| \*\*Storage\*\* | 2 TB SSD |
+| **Storage** | 2 TB SSD |
 
-| \*\*Virtualization Platform\*\* | Oracle VirtualBox |
+| **Virtualization Platform** | Oracle VirtualBox |
 
 
 
@@ -122,7 +117,7 @@ Administrative access is performed remotely from a Lenovo laptop using Microsoft
 
 
 
-\## Software \& Platforms
+ ## Software & Platforms
 
 
 
@@ -134,27 +129,26 @@ The home lab utilizes a combination of commercial and open-source software to su
 
 |---|---|
 
-| \*\*Windows 11 Pro\*\* | Host operating system for the virtualization environment. |
+| **Windows 11 Pro** | Host operating system for the virtualization environment. |
 
-| \*\*Oracle VirtualBox\*\* | Virtualization platform used to create and manage the lab infrastructure. |
+| **Oracle VirtualBox** | Virtualization platform used to create and manage the lab infrastructure. |
 
-| \*\*Microsoft Remote Desktop (RDP)\*\* | Remote administration of the virtualization host from the management workstation. |
+| **Microsoft Remote Desktop (RDP)** | Remote administration of the virtualization host from the management workstation. |
 
-| \*\*Kali Linux\*\* | Security testing platform containing penetration testing and network analysis tools. |
+| **Kali Linux** | Security testing platform containing penetration testing and network analysis tools. |
 
-| \*\*OpenVAS (Greenbone)\*\* | Vulnerability management and security assessment platform. |
+| **OpenVAS (Greenbone)** | Vulnerability management and security assessment platform. |
 
-| \*\*Git\*\* | Version control for project documentation and portfolio development. |
+| **Git** | Version control for project documentation and portfolio development. |
 
-| \*\*GitHub\*\* | Repository hosting and version management for the cybersecurity portfolio. |
+| **GitHub** | Repository hosting and version management for the cybersecurity portfolio. |
 
 
 
 Additional software, security tools, and operating systems will be incorporated into the environment as new projects expand the capabilities of the lab.
 
 
-
-\## Virtual Machine Inventory
+ ## Virtual Machine Inventory
 
 
 
@@ -166,17 +160,17 @@ The lab consists of multiple virtual machines that represent systems commonly fo
 
 |---|---|---|
 
-| \*\*Kali-Lab\*\* | Kali Linux | Security workstation used for penetration testing, enumeration, packet analysis, and security assessments. |
+| **Kali-Lab** | Kali Linux | Security workstation used for penetration testing, enumeration, packet analysis, and security assessments. |
 
-| \*\*OpenVAS-Lab\*\* | Greenbone/OpenVAS | Vulnerability management platform used to perform authenticated and unauthenticated security scans. |
+| **OpenVAS-Lab** | Greenbone/OpenVAS | Vulnerability management platform used to perform authenticated and unauthenticated security scans. |
 
-| \*\*Win11-Lab\*\* | Windows 11 | Modern Windows endpoint used for administration, defensive testing, and endpoint security exercises. |
+| **Win11-Lab** | Windows 11 | Modern Windows endpoint used for administration, defensive testing, and endpoint security exercises. |
 
-| \*\*Win7-Lab\*\* | Windows 7 | Legacy Windows system maintained for compatibility and security testing scenarios. |
+| **Win7-Lab** | Windows 7 | Legacy Windows system maintained for compatibility and security testing scenarios. |
 
-| \*\*Metasploitable2-Lab\*\* | Linux | Intentionally vulnerable target used for exploitation, vulnerability validation, and penetration testing exercises. |
+| **Metasploitable2-Lab** | Linux | Intentionally vulnerable target used for exploitation, vulnerability validation, and penetration testing exercises. |
 
-| \*\*Win11-Base\*\* | Windows 11 | Golden Image maintained as the standardized deployment template for future Windows virtual machines. |
+| **Win11-Base** | Windows 11 | Golden Image maintained as the standardized deployment template for future Windows virtual machines. |
 
 
 
@@ -184,7 +178,7 @@ Each virtual machine is configured to support specific learning objectives while
 
 
 
-\## Storage Strategy
+ ## Storage Strategy
 
 
 
@@ -192,7 +186,7 @@ The cybersecurity lab uses a structured storage strategy to organize project doc
 
 
 
-The primary workspace is located at \*\*C:\\CyberLab\*\*, which serves as the central repository for projects, scripts, evidence, documentation, virtual machine resources, and supporting files.
+The primary workspace is located at **C:\\CyberLab**, which serves as the central repository for projects, scripts, evidence, documentation, virtual machine resources, and supporting files.
 
 
 
@@ -204,11 +198,11 @@ This storage strategy provides a centralized workspace for day-to-day lab operat
 
 
 
-\## Deployment Templates
+ ## Deployment Templates
 
 
 
-To promote consistency across the environment, the lab maintains a standardized Windows deployment template named \*\*Win11-Base\*\*.
+To promote consistency across the environment, the lab maintains a standardized Windows deployment template named **Win11-Base**.
 
 
 
@@ -220,20 +214,20 @@ Using a standardized deployment template provides several operational benefits, 
 
 
 
-\- Consistent system configurations across new deployments.
+- Consistent system configurations across new deployments.
 
-\- Faster provisioning of additional virtual machines.
+- Faster provisioning of additional virtual machines.
 
-\- Simplified recovery following testing or system failures.
+- Simplified recovery following testing or system failures.
 
-\- Reduced time required to build future lab environments.
+- Reduced time required to build future lab environments.
 
 
 
 Maintaining a dedicated Golden Image helps ensure that future projects begin from a stable and repeatable baseline.
 
 
-## Recovery & Backup Strategy
+ ## Recovery & Backup Strategy
 
 The home lab is designed to support rapid recovery from system failures, configuration changes, and testing activities while maintaining a stable and repeatable environment.
 
@@ -249,7 +243,7 @@ Primary recovery resources include:
 
 This layered recovery strategy minimizes downtime, preserves project continuity, and provides a reliable platform for ongoing experimentation and future portfolio development.
 
-## Skills Demonstrated
+ ## Skills Demonstrated
 
 The development and maintenance of this home lab demonstrates practical experience with a variety of technologies, platforms, and cybersecurity concepts, including:
 
@@ -267,7 +261,7 @@ The development and maintenance of this home lab demonstrates practical experien
 
 These capabilities provide the foundation for the additional projects contained within this cybersecurity portfolio, where each project focuses on specific tools, techniques, and investigative methodologies.
 
-## Evidence
+ ## Evidence
 
 The screenshots and supporting documentation included with this project provide evidence that the environment was successfully designed, deployed, and validated.
 
@@ -284,7 +278,7 @@ Evidence captured for this project includes:
 
 The evidence included within this repository demonstrates the implementation of the lab environment and supports the technical documentation presented throughout this project.
 
-## Future Enhancements
+ ## Future Enhancements
 
 This home lab will continue to evolve as additional technologies, security tools, and enterprise services are incorporated into future portfolio projects.
 
