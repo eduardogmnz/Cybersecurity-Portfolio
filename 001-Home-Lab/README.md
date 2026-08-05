@@ -232,3 +232,71 @@ Using a standardized deployment template provides several operational benefits, 
 
 Maintaining a dedicated Golden Image helps ensure that future projects begin from a stable and repeatable baseline.
 
+
+## Recovery & Backup Strategy
+
+The home lab is designed to support rapid recovery from system failures, configuration changes, and testing activities while maintaining a stable and repeatable environment.
+
+Recovery capabilities include VirtualBox snapshots, known-good recovery baselines, standardized deployment templates, and offline backups of critical lab resources. Together, these mechanisms allow virtual machines to be restored quickly without requiring complete reinstallation or reconfiguration.
+
+Primary recovery resources include:
+
+- VirtualBox snapshots for rapid rollback during testing.
+- Known-good recovery baselines for each major virtual machine.
+- Win11-Base Golden Image for standardized Windows deployments.
+- Local storage of virtual machine files and project data.
+- Offline backups maintained on an external hard drive for long-term recovery.
+
+This layered recovery strategy minimizes downtime, preserves project continuity, and provides a reliable platform for ongoing experimentation and future portfolio development.
+
+## Skills Demonstrated
+
+The development and maintenance of this home lab demonstrates practical experience with a variety of technologies, platforms, and cybersecurity concepts, including:
+
+- Virtualization and virtual machine management
+- Windows and Linux system administration
+- Network configuration and segmentation
+- Vulnerability management
+- Penetration testing
+- Network traffic analysis
+- Digital forensics
+- Incident investigation
+- System recovery and backup planning
+- Version control using Git and GitHub
+- Technical documentation and infrastructure design
+
+These capabilities provide the foundation for the additional projects contained within this cybersecurity portfolio, where each project focuses on specific tools, techniques, and investigative methodologies.
+
+## Evidence
+
+The screenshots and supporting documentation included with this project provide evidence that the environment was successfully designed, deployed, and validated.
+
+Evidence captured for this project includes:
+
+- Host hardware and operating system configuration
+- CyberLab workspace structure
+- Oracle VirtualBox environment
+- Virtual network configuration
+- Individual virtual machine deployments
+- OpenVAS deployment
+- GitHub repository synchronization
+- Supporting architecture documentation
+
+The evidence included within this repository demonstrates the implementation of the lab environment and supports the technical documentation presented throughout this project.
+
+## Future Enhancements
+
+This home lab will continue to evolve as additional technologies, security tools, and enterprise services are incorporated into future portfolio projects.
+
+Planned enhancements include:
+
+- Expansion of Windows and Linux environments
+- Additional vulnerable systems for penetration testing
+- Active Directory infrastructure
+- Security Information and Event Management (SIEM) capabilities
+- Endpoint monitoring and logging
+- Threat detection and incident response scenarios
+- Security automation using Python
+- Additional forensic and malware analysis environments
+
+As the environment grows, this project will continue to serve as the foundational infrastructure supporting all future cybersecurity projects contained within this portfolio.
