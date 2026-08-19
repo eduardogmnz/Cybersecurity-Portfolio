@@ -59,21 +59,13 @@ The assessment was conducted within the isolated virtual environment documented 
 
 
 | Component | Role |
-
 |---|---|
-
 | **Kali Linux** | Security testing workstation used to perform the Nmap scan and analyze results. |
-
 | **Metasploitable2** | Intentionally vulnerable Linux system used as the authorized enumeration target. |
-
 | **Target IP Address** | 10.0.2.4 |
-
 | **Virtualization Platform** | Oracle VirtualBox |
-
 | **Lab Network** | NCSA-LABS |
-
 | **Primary Tool** | Nmap 7.99 |
-
 
 
 All scanning activity was performed against an intentionally vulnerable virtual machine within the controlled lab environment.
@@ -121,15 +113,10 @@ The scan options provided the following functionality:
 
 
 | Option | Purpose |
-
 |---|---|
-
 | **-sC** | Executes Nmap's default NSE scripts against discovered services to collect additional information and identify noteworthy configurations. |
-
 | **-sV** | Performs service and version detection against open ports. |
-
 | **-oA metasploitable_scan** | Saves the scan results in Nmap's normal, grepable, and XML output formats using the `metasploitable_scan` filename. |
-
 | **10.0.2.4** | Specifies the Metasploitable2 virtual machine as the target of the scan. |
 
 
@@ -147,53 +134,29 @@ The Nmap scan confirmed that the target was online and identified **23 open TCP 
 
 
 | Port | Service | Detected Version / Description |
-
 |---|---|---|
-
 | **21/tcp** | FTP | vsftpd 2.3.4 |
-
 | **22/tcp** | SSH | OpenSSH 4.7p1 Debian 8ubuntu1 |
-
 | **23/tcp** | Telnet | Linux telnetd |
-
 | **25/tcp** | SMTP | Postfix smtpd |
-
 | **53/tcp** | DNS | ISC BIND 9.4.2 |
-
 | **80/tcp** | HTTP | Apache httpd 2.2.8 |
-
 | **111/tcp** | RPC | rpcbind 2 |
-
 | **139/tcp** | NetBIOS/SMB | Samba smbd 3.X–4.X |
-
 | **445/tcp** | SMB | Samba smbd 3.0.20-Debian |
-
 | **512/tcp** | exec | netkit-rsh rexecd |
-
 | **513/tcp** | login | rlogind |
-
 | **514/tcp** | TCP wrapped | tcpwrapped |
-
 | **1099/tcp** | Java RMI | GNU Classpath grmiregistry |
-
 | **1524/tcp** | Bind shell | Metasploitable root shell |
-
 | **2049/tcp** | NFS | NFS 2–4 |
-
 | **2121/tcp** | FTP | ProFTPD 1.3.1 |
-
 | **3306/tcp** | MySQL | MySQL 5.0.51a-3ubuntu5 |
-
 | **5432/tcp** | PostgreSQL | PostgreSQL 8.3.0–8.3.7 |
-
 | **5900/tcp** | VNC | VNC protocol 3.3 |
-
 | **6000/tcp** | X11 | Access denied |
-
 | **6667/tcp** | IRC | UnrealIRCd |
-
 | **8009/tcp** | AJP13 | Apache Jserv Protocol 1.3 |
-
 | **8180/tcp** | HTTP | Apache Tomcat/Coyote JSP engine 1.1 |
 
 
@@ -310,76 +273,35 @@ The initial scan results identified **23 open TCP ports** and provided service a
 
 
 
-<p align="center">
-
-&#x20; <img src="Evidence/01_Nmap-Open-Ports-and-Services.png"
-
-&#x20;      alt="Nmap open ports and service enumeration results"
-
-&#x20;      width="900">
-
-</p>
-
-
+<img src="Evidence/01_Nmap-Open-Ports-and-Services.png" alt="Nmap open ports and service enumeration results" width="900">
 
 ### Metasploitable Root Shell
-
-
 
 Nmap identified an exposed bind shell on **TCP port 1524**, reported as a Metasploitable root shell.
 
 
 
-<p align="center">
-
-&#x20; <img src="Evidence/02_Nmap-Metasploitable-Root-Shell-Finding.png"
-
-&#x20;      alt="Nmap Metasploitable root shell finding"
-
-&#x20;      width="900">
-
-</p>
-
+<img src="Evidence/02_Nmap-Metasploitable-Root-Shell-Finding.png" alt="Nmap Metasploitable root shell finding" width="900">
 
 
 ### Anonymous FTP Access
-
 
 
 Nmap's default scripts identified that the FTP service on **TCP port 21** permitted anonymous authentication.
 
 
 
-<p align="center">
-
-&#x20; <img src="Evidence/03_Nmap-Anonymous-FTP-Finding.png"
-
-&#x20;      alt="Nmap anonymous FTP access finding"
-
-&#x20;      width="900">
-
-</p>
-
+<img src="Evidence/03_Nmap-Anonymous-FTP-Finding.png" alt="Nmap anonymous FTP access finding" width="900">
 
 
 ### SMB Security Findings
-
 
 
 Nmap's SMB scripts identified additional host information and reported that **SMB message signing was disabled**.
 
 
 
-<p align="center">
-
-&#x20; <img src="Evidence/04_Nmap-SMB-Security-Findings.png"
-
-&#x20;      alt="Nmap SMB security findings"
-
-&#x20;      width="900">
-
-</p>
-
+<img src="Evidence/04_Nmap-SMB-Security-Findings.png" alt="Nmap SMB security findings" width="900">
 
 
 ### Original Scan Artifacts
