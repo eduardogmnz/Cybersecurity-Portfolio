@@ -1,0 +1,35 @@
+<Sysmon schemaversion="4.90">
+  <HashAlgorithms>SHA256</HashAlgorithms>
+
+  <EventFiltering>
+
+    <!-- Event ID 1: Process creation -->
+    <ProcessCreate onmatch="exclude" />
+
+    <!-- Event ID 3: Network connections -->
+    <NetworkConnect onmatch="exclude" />
+
+    <!-- Event ID 11: File creation -->
+    <FileCreate onmatch="exclude" />
+
+  <!-- Event IDs 12-14: Security-relevant registry activity -->
+  <RegistryEvent onmatch="include">
+    <!-- Common persistence: programs launched at user logon -->
+    <TargetObject condition="contains">\CurrentVersion\Run</TargetObject>
+    <TargetObject condition="contains">\CurrentVersion\RunOnce</TargetObject>
+
+    <!-- Windows services and drivers -->
+    <TargetObject condition="begin with">HKLM\System\CurrentControlSet\Services\</TargetObject>
+
+    <!-- Winlogon persistence/configuration -->
+    <TargetObject condition="contains">\Microsoft\Windows NT\CurrentVersion\Winlogon</TargetObject>
+
+    <!-- Image File Execution Options can be abused for persistence/execution -->
+    <TargetObject condition="contains">\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\</TargetObject>
+  </RegistryEvent>
+
+    <!-- Event ID 22: DNS queries -->
+    <DnsQuery onmatch="exclude" />
+
+  </EventFiltering>
+</Sysmon>

@@ -1,0 +1,82 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.09.23",
+  "_id": "uQ9azqABIzbJ1fvFgLRy",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.56.20",
+      "name": "Win11-Lab",
+      "id": "001"
+    },
+    "manager": {
+      "name": "wazuh-lab"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "messageNumber": "1",
+          "messageTotal": "1",
+          "scriptBlockText": "Get-ItemProperty -Path HKLM:\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion",
+          "scriptBlockId": "34bd92d9-c0a5-4069-9e72-c6c1566a8d5f"
+        },
+        "system": {
+          "eventID": "4104",
+          "keywords": "0x0",
+          "providerGuid": "{a0c1853b-5c40-4b15-8766-3cf1c58f985a}",
+          "level": "5",
+          "channel": "Microsoft-Windows-PowerShell/Operational",
+          "opcode": "15",
+          "message": "\"Creating Scriptblock text (1 of 1):\r\nGet-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\r\n\r\nScriptBlock ID: 34bd92d9-c0a5-4069-9e72-c6c1566a8d5f\r\nPath: \"",
+          "version": "1",
+          "systemTime": "2026-09-23T13:00:28.0507543Z",
+          "eventRecordID": "568",
+          "threadID": "4084",
+          "computer": "WIN11-LAB",
+          "task": "2",
+          "processID": "6328",
+          "severityValue": "VERBOSE",
+          "providerName": "Microsoft-Windows-PowerShell"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": false,
+      "level": 3,
+      "description": "Powershell script queried registry value",
+      "groups": [
+        "windows",
+        " powershell"
+      ],
+      "mitre": {
+        "technique": [
+          "Query Registry"
+        ],
+        "id": [
+          "T1012"
+        ],
+        "tactic": [
+          "Discovery"
+        ]
+      },
+      "id": "91808"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1790168429.6620667",
+    "timestamp": "2026-09-23T13:00:29.886+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-09-23T13:00:29.886Z"
+    ]
+  },
+  "sort": [
+    1790168429886
+  ]
+}

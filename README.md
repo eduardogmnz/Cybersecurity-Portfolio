@@ -1,4 +1,4 @@
-\# CyberLab Portfolio
+# CyberLab Portfolio
 
 
 
@@ -6,49 +6,49 @@ This repository contains documented cybersecurity projects completed in an autho
 
 
 
-\## Projects
+## Projects
 
 
 
-1\. Cybersecurity Home Lab
+1. Cybersecurity Home Lab
 
-2\. Nmap Enumeration
+2. Nmap Enumeration
 
-3\. Wireshark Packet Analysis
+3. Wireshark Packet Analysis
 
-4\. OpenVAS Vulnerability Assessment
+4. OpenVAS Vulnerability Assessment
 
-5\. Metasploit vsftpd 2.3.4 Lab
+5. Metasploit vsftpd 2.3.4 Lab
 
-6\. Memory Forensics
+6. Memory Forensics
 
-7\. File Carving
-
-
-
-\## Focus Areas
+7. File Carving
+8. [SIEM / SOC Incident Investigation](./008-SIEM-SOC-Investigation/)
 
 
 
-\- Network enumeration
-
-\- Vulnerability assessment
-
-\- Packet analysis
-
-\- Memory forensics
-
-\- File recovery
-
-\- Security documentation
-
-\- Incident analysis
+## Focus Areas
 
 
 
-\## Disclaimer
+- Network enumeration
+
+- Vulnerability assessment
+
+- Packet analysis
+
+- Memory forensics
+
+- File recovery
+
+- Security documentation
+
+- Incident analysis
+
+
+
+## Disclaimer
 
 
 
 All security testing documented in this repository was performed in an authorized and isolated lab environment for educational purposes.
-
