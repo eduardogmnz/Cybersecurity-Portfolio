@@ -19,15 +19,10 @@ The investigation was performed within an isolated VirtualBox cybersecurity lab 
 ### Systems
 
 | System | Role | SOC-LAB IP Address |
-
 |---|---|---|
-
 | `Kali-Lab` | Controlled attack simulation system | `192.168.56.30` |
-
 | `WIN11-LAB` | Monitored Windows 11 endpoint | `192.168.56.20` |
-
 | `Wazuh-Lab` | Wazuh SIEM manager, indexer, and dashboard | `192.168.56.10` |
-
 | `CYBERHOST1` | SOC analyst workstation / VirtualBox host | `192.168.56.1` |
 
 The systems communicated through the isolated `192.168.56.0/24` SOC-LAB host-only network. Internet connectivity, when required for software installation and updates, was provided separately through NAT interfaces.
@@ -159,23 +154,14 @@ Sysmon Event ID `3` recorded inbound TCP connections from `192.168.56.30` to `19
 The TCP source ports recorded by Sysmon matched the source ports contained in the corresponding Windows Security Event ID `4625` records:
 
 | Attempt | Security 4625 Time | Source Port | Sysmon Event 3 Time | Destination |
-
 |---|---|---:|---|---|
-
 | 1 | 14:56:44 | `50220` | 14:56:46 | `192.168.56.20:445` |
-
 | 2 | 14:56:50 | `50228` | 14:56:52 | `192.168.56.20:445` |
-
 | 3 | 14:56:56 | `53304` | 14:56:58 | `192.168.56.20:445` |
-
 | 4 | 14:57:03 | `53308` | 14:57:05 | `192.168.56.20:445` |
-
 | 5 | 14:57:09 | `33548` | 14:57:10 | `192.168.56.20:445` |
-
 | 6 | 14:57:14 | `33550` | 14:57:17 | `192.168.56.20:445` |
-
 | 7 | 14:57:20 | `33554` | 14:57:22 | `192.168.56.20:445` |
-
 | 8 | 14:57:25 | `33564` | 14:57:27 | `192.168.56.20:445` |
 
 The matching source IP addresses and TCP source ports provide strong correlation between the network connections and the failed authentication events.
@@ -267,47 +253,26 @@ These findings are limited to the telemetry sources and time window investigated
 The following timeline reconstructs the primary correlated authentication sequence. Windows endpoint times are presented in Central Daylight Time (CDT).
 
 | Time (CDT) | Data Source | Event | Analysis |
-
 |---|---|---|---|
-
 | 14:56:44 | Windows Security | Event ID `4625`, source `192.168.56.30:50220`, target `labadmin` | First failed authentication in the eight-event sequence |
-
 | 14:56:46 | Sysmon | Event ID `3`, `192.168.56.30:50220` → `192.168.56.20:445` | Network connection correlated to first authentication failure |
-
 | 14:56:50 | Windows Security | Event ID `4625`, source port `50228` | Second failed authentication |
-
 | 14:56:52 | Sysmon | Event ID `3`, source port `50228` → TCP/445 | Matching SMB network connection |
-
 | 14:56:56 | Windows Security | Event ID `4625`, source port `53304` | Third failed authentication |
-
 | 14:56:58 | Sysmon | Event ID `3`, source port `53304` → TCP/445 | Matching SMB network connection |
-
 | 14:57:03 | Windows Security | Event ID `4625`, source port `53308` | Fourth failed authentication |
-
 | 14:57:05 | Sysmon | Event ID `3`, source port `53308` → TCP/445 | Matching SMB network connection |
-
 | 14:57:09 | Windows Security | Event ID `4625`, source port `33548` | Fifth failed authentication |
-
 | 14:57:10 | Sysmon | Event ID `3`, source port `33548` → TCP/445 | Matching SMB network connection |
-
 | 14:57:14 | Windows Security | Event ID `4625`, source port `33550` | Sixth failed authentication |
-
 | 14:57:17 | Sysmon | Event ID `3`, source port `33550` → TCP/445 | Matching SMB network connection |
-
 | 14:57:20 | Windows Security | Event ID `4625`, source port `33554` | Seventh failed authentication |
-
 | 14:57:22 | Sysmon | Event ID `3`, source port `33554` → TCP/445 | Matching SMB network connection |
-
 | 14:57:25 | Windows Security | Event ID `4625`, Record ID `111962`, source port `33564` | Eighth failed authentication; correlation threshold satisfied |
-
 | 14:57:27 | Sysmon | Event ID `3`, source port `33564` → TCP/445 | Network telemetry correlates with eighth failure |
-
 | ~14:58:12 | Wazuh | Rule `60204`, Level 10 | Eight failed logons correlated as **Multiple Windows Logon Failures** |
-
 | 14:59:52 | Windows Security | Event ID `4624`, `SYSTEM`, Logon Type `5` | Service logon; no remote source IP and not evidence of successful Kali authentication |
-
 | 15:00:35 | Windows Security | Event ID `4624`, `SYSTEM`, Logon Type `5` | Additional service logon; not associated with the controlled source |
-
 | Through 15:02 | Sysmon | Event IDs `1` and `11` reviewed | No subsequent execution or file creation identified as attributable to the authentication attempts |
 
 The eight failed authentication events occurred within approximately 41 seconds. The source ports in the Windows Security events matched the source ports of the corresponding Sysmon TCP/445 connections, providing endpoint-level correlation between the network and authentication telemetry.
@@ -391,37 +356,21 @@ This PowerShell activity was performed as post-incident telemetry validation and
 The following observables were used to correlate and investigate the simulated activity.
 
 | Observable | Value | Context |
-
 |---|---|---|
-
 | Source host | `Kali-Lab` | Controlled attack simulation system |
-
 | Source IP | `192.168.56.30` | Origin of the SMB authentication attempts |
-
 | Destination host | `WIN11-LAB` | Monitored Windows endpoint |
-
 | Destination IP | `192.168.56.20` | Target of the authentication attempts |
-
 | Destination port | `445/TCP` | SMB service |
-
 | Target account | `labadmin` | Account used during controlled authentication testing |
-
 | Authentication | `NTLM` | Authentication package recorded in Event ID 4625 |
-
 | Logon Type | `3` | Windows network logon |
-
 | Status | `0xc000006d` | Logon failure |
-
 | Substatus | `0xc000006a` | Incorrect password for an existing account |
-
 | Windows Event ID | `4625` | Failed authentication |
-
 | Sysmon Event ID | `3` | Network connection telemetry |
-
 | Wazuh Rule | `60122` | Individual failed-logon detection |
-
 | Wazuh Rule | `60204` | Correlated multiple-logon-failure detection |
-
 | MITRE ATT&CK | `T1110 - Brute Force` | Mapping associated with the correlated authentication activity |
 
 Because this activity occurred in a controlled lab, `192.168.56.30` and the other values above should be treated as investigation observables rather than real-world malicious indicators of compromise.
